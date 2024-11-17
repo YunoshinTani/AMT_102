@@ -26,6 +26,11 @@ int main()
         printf("rotation:%lf  ", encoder1.read_rotation(PPR));
         // 角度(0 < 360)
         printf("theta:%lf  ", encoder1.read_theta(PPR));
+
+        printf("omega:%lf  ", encoder1.read_omega(PPR));
+
+        printf("RPM:%lf  ", encoder1.read_RPM(PPR));
+
         printf("\n");
 
         // 3600度回転したらリセット
