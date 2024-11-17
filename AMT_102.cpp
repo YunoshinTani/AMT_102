@@ -3,14 +3,13 @@
  * @author 谷 優之心 (yunoshin.tani.0819@gmail.com)
  * @brief インクリメンタルエンコーダーの "AMT 102" から値を取得する
  * @version 1.3
- * @date 2024-11-10
+ * @date 2024-11-18
  * @copyright Copyright (c) 2024
  */
 
 #include "AMT_102.hpp"
 
-AMT_102::AMT_102(PinName A_PHASE_PIN, PinName B_PHASE_PIN) : _A_PHASE(A_PHASE_PIN) , _B_PHASE(B_PHASE_PIN)
-{
+AMT_102::AMT_102(PinName A_PHASE_PIN, PinName B_PHASE_PIN) : _A_PHASE(A_PHASE_PIN) , _B_PHASE(B_PHASE_PIN){
     _A_PHASE.rise(callback(this, &AMT_102::a_rise));
     _A_PHASE.fall(callback(this, &AMT_102::a_fall));
     total_pulse = 0;

@@ -2,8 +2,8 @@
  * @file example.cpp
  * @author 谷 優之心 (yunoshin.tani.0819@gmail.com)
  * @brief AMT_102.hpp の使用例
- * @version 1.2
- * @date 2024-11-10
+ * @version 1.3
+ * @date 2024-11-18
  * @copyright Copyright (c) 2024
  */
 

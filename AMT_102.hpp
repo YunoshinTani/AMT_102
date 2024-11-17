@@ -3,7 +3,7 @@
  * @author 谷 優之心 (yunoshin.tani.0819@gmail.com)
  * @brief インクリメンタル型エンコーダーの "AMT 102" から値を取得する
  * @version 1.3
- * @date 2024-11-10
+ * @date 2024-11-18
  * @copyright Copyright (c) 2024
  */
 
