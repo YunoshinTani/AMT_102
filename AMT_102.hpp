@@ -2,7 +2,7 @@
  * @file AMT_102.hpp
  * @author 谷 優之心 (yunoshin.tani.0819@gmail.com)
  * @brief インクリメンタル型エンコーダーの "AMT 102" から値を取得する
- * @version 1.2
+ * @version 1.3
  * @date 2024-11-10
  * @copyright Copyright (c) 2024
  */
@@ -76,6 +76,14 @@ public:
      * @note 単位(度/ms)
      */
     double read_omega(uint32_t PPR);
+
+    /**
+     * @brief 一分間当たりの回転数(RPM)を読む
+     * @param PPR エンコーダーの分解能
+     * @return RPM
+     * @note 単位(回転/m)
+     */
+    double read_RPM(uint32_t PPR);
 
     /**
      * @brief デバッグ用関数 エンコーダーの値をprintf
