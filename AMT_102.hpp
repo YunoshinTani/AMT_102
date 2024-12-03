@@ -62,12 +62,20 @@ public:
     double read_rotation(uint32_t PPR);
 
     /**
-     * @brief 回転した角度を読む
+     * @brief 回転した角度を読む(符号なし)
      * @param PPR エンコーダーの分解能
      * @return 回転した角度
      * @note (右で増える、左で減る、-になることはない) (0 < 360) 
      */
     double read_theta(uint32_t PPR);
+
+    /**
+     * @brief 回転した角度を読む(符号付き)
+     * @param PPR エンコーダーの分解能
+     * @return 回転した角度
+     * @note (右で増える、左で減る) (-180 < 180) 
+     */
+    double read_theta_signed(uint32_t PPR);
 
     /**
      * @brief 角速度を読む
@@ -109,17 +117,22 @@ private:
      */
     volatile int64_t total_pulse;
 
-     /**
+    /**
      * @brief エンコーダーから取得した最終的な値に変域(0<1回転)をつけた値
      */   
     volatile int64_t rotation_angle;
 
-     /**
+    /**
+     * @brief エンコーダーから取得した最終的な値に変域(0<360度)をつけた値
+     */   
+    volatile int64_t rotation_theta;
+
+    /**
      * @brief タイマー開始時の角度
      */   
     double start_angle = 0;
 
-     /**
+    /**
      * @brief 100ms後の角度
      */   
     double end_angle = 0;

@@ -59,6 +59,24 @@ double AMT_102::read_theta(uint32_t PPR){
     }
 }
 
+double AMT_102::read_theta_signed(uint32_t PPR){
+    if (total_pulse >= 0){
+        rotation_angle = total_pulse % (PPR * 2);
+        rotation_theta = (double)rotation_angle / (PPR * 2.0) * 360.0;
+    }
+    else{
+        rotation_angle = -1 * total_pulse % (PPR * 2);
+        rotation_theta =  360.0 - (double)rotation_angle / (PPR * 2.0) * 360.0;
+    }
+    
+    if (rotation_theta <= 180){
+        return rotation_theta;
+    }
+    else{
+        return rotation_theta - 360.0;
+    }
+}
+
 double AMT_102::read_omega(uint32_t PPR){
     start_angle = 0.0;
     end_angle = 0.0;
